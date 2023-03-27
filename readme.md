@@ -1,4 +1,4 @@
-Test app: 
+Test app running the below code: 
 # Build the database image
 docker image build -t cv-db -f Dockerfile.db .
 
