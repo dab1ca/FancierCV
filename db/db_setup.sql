@@ -10,4 +10,5 @@ USE cv;
 
 CREATE TABLE jobs (id int primary key auto_increment, job_title varchar(50), employer_name varchar(50), period_time varchar(50), job_description text(5000));
 
-INSERT INTO jobs (employer_name, job_title, period_time, employment_start_date, employment_end_date) VALUES ('Tek Experts', 'Technical Lead', '2019 - Present', 'random text for now, just  to see');
+INSERT INTO jobs (employer_name, job_title, period_time, job_description) VALUES ('Tek Experts', 'Technical Lead', '2019 - Present', 'random text for now, just  to see');
+INSERT INTO jobs (employer_name, job_title, period_time, job_description) VALUES ('Tek Experts', 'L3 Engineer', '2018-2019', 'more rndm text');
