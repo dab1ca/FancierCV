@@ -110,7 +110,7 @@
 					 
 						try {
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, employment_start_date, employment_end_date FROM jobs ORDER BY employment_end_date ASC");
+						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY period_time DESC");
 						   $jobs = $jobsquery->fetchAll();
 					 
 						   if (empty($jobs)) {
