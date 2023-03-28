@@ -20,10 +20,10 @@ INSERT INTO education (specialty_title, university_name, period_time, university
 
 CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date);
 
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Linux Server Administration', 'Software University', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Windows Server Administration', 'Software University', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('C# Advanced', 'Software University', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Fundamentals with C#', 'Software University', '2023-03-03');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Basics with C#', 'Software University', '2023-03-03');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-04');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-28');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Linux Server Administration', 'Software University', '2022-10-24');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Windows Server Administration', 'Software University', '2022-07-25');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('C# Advanced', 'Software University', '2019-11-07');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Fundamentals with C#', 'Software University', '2019-06-12');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Basics with C#', 'Software University', '2019-03-12');

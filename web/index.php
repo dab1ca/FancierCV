@@ -161,7 +161,6 @@
 									<h2>{$edu['university_name']} - {$edu['university_location']}</h2>
 									<h3>{$edu['specialty_title']}<br></br></h3>
 								</div>";
-								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
 							  }
 						   }
 						}
