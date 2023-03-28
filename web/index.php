@@ -118,9 +118,9 @@
 						   if (empty($jobs)) {
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
-								for ($i = 1; $i < count($jobs); $i++) {
+								for ($i = 1; $i <= count($jobs); $i++) {
 									$job = $jobs[$i];
-									if ($i == (count($jobs) - 1)) {
+									if ($i == count($jobs)) {
 										print "<div class='job last'>
 												<h2>{$job['employer_name']}<br></br></h2>
 												<h3>{$job['job_title']}</h3>	
