@@ -110,14 +110,18 @@
 					 
 						try {
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY period_time DESC");
+						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY id ASC");
 						   $jobs = $jobsquery->fetchAll();
 					 
 						   if (empty($jobs)) {
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
 							  foreach ($jobs as $job) {
-								 print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
+								 print "<h2>{$job['employer_name']}</br></h2>
+								 		<h3>{$job['job_title']}</h3>	
+										<h4>{$job['period_time']}</h4>
+										<p>{$job['job_description']}</p>";
+								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
 							  }
 						   }
 						}
