@@ -105,7 +105,7 @@
 							<h2>Experience</h2>
 						</div><!--// .yui-u -->
 
-					 <?php
+				<?php
 						require_once ('config.php');
 					 
 						try {
@@ -133,8 +133,8 @@
 						   print "<span id='error' style='display: none;'><small><i>".$e->getMessage()." <a href=\"#\" onclick=\"document.getElementById('error').style = 'display: none;';\">Скрий</a></i></small></span>\n";
 						   print "</div></td></tr>\n";
 						}
-					 ?>
-					 
+				?>
+
 						</div><!--// .yui-u -->
 					</div><!--// .yui-gf -->
 
@@ -143,14 +143,33 @@
 						<div class="yui-u first">
 							<h2>Education</h2>
 						</div>
-						<div class="yui-u">
-							<h2>South-West University - Blagoevgrad, Bulgaria</h2>
-							<h3>Business Administration<br></br></h3>
-						</div>
-						<div class="yui-u">
-							<h2>PMG Akad. S. P. Koroliov - Blagoevgrad, Bulgaria</h2>
-							<h3>Mathematics/English</h3>
-						</div>
+				<?php
+						require_once ('config.php');
+					 
+						try {
+						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
+						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY id ASC");
+						   $jobs = $jobsquery->fetchAll();
+					 
+						   if (empty($jobs)) {
+							  echo "<tr><td>Няма данни.</td></tr>\n";
+						   } else {
+							  foreach ($jobs as $job) {
+								print "<div class='yui-u'>
+									<h2>{$job['university_name']} - {$job['university_location']}</h2>
+									<h3>{$job['specialty_title']}<br></br></h3>
+								</div>";
+								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
+							  }
+						   }
+						}
+						catch (PDOException $e) {
+						   print "<tr><td><div align='center'>\n";
+						   print "Няма връзка към базата. Опитайте отново. <a href=\"#\" onclick=\"document.getElementById('error').style = 'display: block;';\">Детайли</a><br/>\n";
+						   print "<span id='error' style='display: none;'><small><i>".$e->getMessage()." <a href=\"#\" onclick=\"document.getElementById('error').style = 'display: none;';\">Скрий</a></i></small></span>\n";
+						   print "</div></td></tr>\n";
+						}
+				?>
 					</div><!--// .yui-gf -->
 
 					<div class="yui-gf last">
