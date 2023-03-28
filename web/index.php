@@ -114,19 +114,28 @@
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
 						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY id ASC");
 						   $jobs = $jobsquery->fetchAll();
-					 
+						   
 						   if (empty($jobs)) {
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
-							  foreach ($jobs as $job) {
-								print "<div class='job'>
-										<h2>{$job['employer_name']}<br></br></h2>
-								 		<h3>{$job['job_title']}</h3>	
-										<h4>{$job['period_time']}</h4>
-										<p>{$job['job_description']}</p>
-									</div>";
-								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
-							  }
+								for ($i = 1; $i < count($jobs); $i++) {
+									$job = $jobs[$i];
+									if ($i == (count($jobs) - 1)) {
+										print "<div class='job last'>
+												<h2>{$job['employer_name']}<br></br></h2>
+												<h3>{$job['job_title']}</h3>	
+												<h4>{$job['period_time']}</h4>
+												<p>{$job['job_description']}</p>
+												</div>";
+									} else {
+										print "<div class='job'>
+												<h2>{$job['employer_name']}<br></br></h2>
+												<h3>{$job['job_title']}</h3>	
+												<h4>{$job['period_time']}</h4>
+												<p>{$job['job_description']}</p>
+												</div>";
+									}
+								}
 						   }
 						}
 						catch (PDOException $e) {
