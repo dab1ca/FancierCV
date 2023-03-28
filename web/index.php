@@ -121,7 +121,7 @@
 										<h2>{$job['employer_name']}<br></br></h2>
 								 		<h3>{$job['job_title']}</h3>	
 										<h4>{$job['period_time']}</h4>
-										<p>{$job['job_description']}</p>;
+										<p>{$job['job_description']}</p>
 									</div>";
 								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
 							  }
@@ -134,8 +134,7 @@
 						   print "</div></td></tr>\n";
 						}
 					 ?>
-						<div class="yui-u">
-
+					 
 						</div><!--// .yui-u -->
 					</div><!--// .yui-gf -->
 
