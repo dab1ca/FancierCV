@@ -148,7 +148,7 @@
 					 
 						try {
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-						   $jobsquery = $connection->query("SELECT employer_name, job_title, period_time, job_description FROM jobs ORDER BY id ASC");
+						   $jobsquery = $connection->query("SELECT university_name, university_location, specialty_title FROM education ORDER BY id ASC");
 						   $jobs = $jobsquery->fetchAll();
 					 
 						   if (empty($jobs)) {
