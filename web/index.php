@@ -117,10 +117,12 @@
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
 							  foreach ($jobs as $job) {
-								 print "<h2>{$job['employer_name']}</br></h2>
+								print "<div class='job'>
+										<h2>{$job['employer_name']}<br></br></h2>
 								 		<h3>{$job['job_title']}</h3>	
 										<h4>{$job['period_time']}</h4>
-										<p>{$job['job_description']}</p>";
+										<p>{$job['job_description']}</p>;
+									</div>";
 								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
 							  }
 						   }
