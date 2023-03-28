@@ -150,16 +150,16 @@
 					 
 						try {
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-						   $jobsquery = $connection->query("SELECT university_name, university_location, specialty_title FROM education ORDER BY id ASC");
-						   $jobs = $jobsquery->fetchAll();
+						   $educationquery = $connection->query("SELECT university_name, university_location, specialty_title FROM education ORDER BY id ASC");
+						   $education = $educationquery->fetchAll();
 					 
-						   if (empty($jobs)) {
+						   if (empty($education)) {
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
-							  foreach ($jobs as $job) {
+							  foreach ($education as $edu) {
 								print "<div class='yui-u'>
-									<h2>{$job['university_name']} - {$job['university_location']}</h2>
-									<h3>{$job['specialty_title']}<br></br></h3>
+									<h2>{$edu['university_name']} - {$edu['university_location']}</h2>
+									<h3>{$edu['specialty_title']}<br></br></h3>
 								</div>";
 								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
 							  }
@@ -179,11 +179,30 @@
 							<h2>Certifications</h2>
 						</div>
 						<div class="yui-u">
-							<h3>Azure Administrator Associate - Microsoft</h3>
-							<h3>C# Programming Basics - SoftUni</h3>
-							<h3>C# Programming Fundamentals - SoftUni</h3>
-							<h3>C# Advanced - SoftUni</h3>
-							<h3>Windows Server Administration - SoftUni</h3>
+				<?php
+						require_once ('config.php');
+					 
+						try {
+						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
+						   $certsquery = $connection->query("SELECT cert_title, issuer_name, date_of_issue FROM certifications ORDER BY id ASC");
+						   $certs = $certsquery->fetchAll();
+					 
+						   if (empty($certs)) {
+							  echo "<tr><td>Няма данни.</td></tr>\n";
+						   } else {
+							  foreach ($certs as $cert) {
+								print "<h3>{$cert['cert_title']} - {$cert['issuer_name']} - {$cert['date_of_issue']}</h3>";
+								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
+							  }
+						   }
+						}
+						catch (PDOException $e) {
+						   print "<tr><td><div align='center'>\n";
+						   print "Няма връзка към базата. Опитайте отново. <a href=\"#\" onclick=\"document.getElementById('error').style = 'display: block;';\">Детайли</a><br/>\n";
+						   print "<span id='error' style='display: none;'><small><i>".$e->getMessage()." <a href=\"#\" onclick=\"document.getElementById('error').style = 'display: none;';\">Скрий</a></i></small></span>\n";
+						   print "</div></td></tr>\n";
+						}
+				?>
 						</div>
 					</div><!--// .yui-gf -->
 
