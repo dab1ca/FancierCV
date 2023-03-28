@@ -105,6 +105,8 @@
 							<h2>Experience</h2>
 						</div><!--// .yui-u -->
 
+						<div class="yui-u">
+
 				<?php
 						require_once ('config.php');
 					 
