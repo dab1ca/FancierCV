@@ -14,6 +14,6 @@ $container2 = New-AzContainerInstanceObject -Name db -Image dab1ca/cv:cv-db -Req
 
 New-AzContainerGroup -ResourceGroupName ttsvtest -Name cv-app -Location uksouth -Container @($container1, $container2) -IpAddressType Public
 
-Invoke-AzContainerInstanceCommand -ContainerGroupName cv-app -ContainerName web -ResourceGroupName ttsvtest -Command "sh /usr/local/bin/hosts-entry.sh"
+Invoke-AzContainerInstanceCommand -ContainerGroupName cv-app -ContainerName web -ResourceGroupName ttsvtest -Command "sh /var/www/html/hosts-entry.sh"
 
-Invoke-AzContainerInstanceCommand -ContainerGroupName cv-app -ContainerName web -ResourceGroupName ttsvtest -Command "rm  /usr/local/bin/hosts-entry.sh"
+Invoke-AzContainerInstanceCommand -ContainerGroupName cv-app -ContainerName web -ResourceGroupName ttsvtest -Command "rm  /var/www/html/hosts-entry.sh"
