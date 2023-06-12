@@ -187,6 +187,7 @@
 							<h2>Certifications</h2>
 						</div>
 						<div class="yui-u">
+				<table>
 				<?php
 						require_once ('config.php');
 					 
@@ -199,8 +200,9 @@
 							  echo "<tr><td>Няма данни.</td></tr>\n";
 						   } else {
 							  foreach ($certs as $cert) {
-								print "<h3>{$cert['cert_title']} - {$cert['issuer_name']} - {$cert['date_of_issue']}</h3>";
-								#print "<tr><td>{$job['employer_name']}</td><td align=\"right\">{$job['job_title']}</td></tr>\n";
+								print "<tr><td><h3>{$cert['cert_title']}</td><td>{$cert['issuer_name']}</td><td>{$cert['date_of_issue']}</td><td>";
+								print '<img height="320" width="250" src="data:image/jpeg;base64,'.base64_encode( $cert['certificate_image'] ).'"/>';
+								print "</td></h3>";
 							  }
 						   }
 						}
@@ -211,6 +213,7 @@
 						   print "</div></td></tr>\n";
 						}
 				?>
+				</table>
 						</div>
 					</div><!--// .yui-gf -->
 

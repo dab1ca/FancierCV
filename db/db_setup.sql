@@ -16,14 +16,14 @@ INSERT INTO jobs (employer_name, job_title, period_time, job_description) VALUES
 CREATE TABLE education (id int primary key auto_increment, specialty_title varchar(50), university_name varchar(50), university_location varchar(50), period_time varchar(50));
 
 INSERT INTO education (specialty_title, university_name, period_time, university_location) VALUES ('Business Administration', 'South-West University', '2008-2012', 'Blagoevgrad');
-INSERT INTO education (specialty_title, university_name, period_time, university_location) VALUES ('Mathematics/English', 'PMG Akad. S. P. Koroliov', '2008-2012', 'Blagoevgrad');
+INSERT INTO education (specialty_title, university_name, period_time, university_location) VALUES ('Mathematics/English', 'PMG Akad. S. P. Koroliov', '2003-2007', 'Blagoevgrad');
 
-CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date);
+CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date, certificate_image longblob());
 
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-04');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-28');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Linux Server Administration', 'Software University', '2022-10-24');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Windows Server Administration', 'Software University', '2022-07-25');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('C# Advanced', 'Software University', '2019-11-07');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Fundamentals with C#', 'Software University', '2019-06-12');
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue) VALUES ('Proggraming Basics with C#', 'Software University', '2019-03-12');
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-04', LOAD_FILE('/var/lib/mysql/images/az104.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-28', LOAD_FILE('/var/lib/mysql/images/containers.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Linux Server Administration', 'Software University', '2022-10-24', LOAD_FILE('/var/lib/mysql/images/lsa.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Windows Server Administration', 'Software University', '2022-07-25', LOAD_FILE('/var/lib/mysql/images/wsa.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('C# Advanced', 'Software University', '2019-11-07', LOAD_FILE('/var/lib/mysql/images/csadvanced.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Proggraming Fundamentals with C#', 'Software University', '2019-06-12', LOAD_FILE('/var/lib/mysql/images/csfundamentals.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Proggraming Basics with C#', 'Software University', '2019-03-12', LOAD_FILE('/var/lib/mysql/images/csbasics.png'));
