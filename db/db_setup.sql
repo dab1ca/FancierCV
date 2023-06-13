@@ -18,7 +18,7 @@ CREATE TABLE education (id int primary key auto_increment, specialty_title varch
 INSERT INTO education (specialty_title, university_name, period_time, university_location) VALUES ('Business Administration', 'South-West University', '2008-2012', 'Blagoevgrad');
 INSERT INTO education (specialty_title, university_name, period_time, university_location) VALUES ('Mathematics/English', 'PMG Akad. S. P. Koroliov', '2003-2007', 'Blagoevgrad');
 
-CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date, certificate_image longblob());
+CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date, certificate_image longblob);
 
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-04', LOAD_FILE('/var/lib/mysql/images/az104.png'));
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-28', LOAD_FILE('/var/lib/mysql/images/containers.png'));

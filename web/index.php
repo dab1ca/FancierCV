@@ -193,7 +193,7 @@
 					 
 						try {
 						   $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
-						   $certsquery = $connection->query("SELECT cert_title, issuer_name, date_of_issue FROM certifications ORDER BY id ASC");
+						   $certsquery = $connection->query("SELECT cert_title, issuer_name, date_of_issue, certificate_image FROM certifications ORDER BY id ASC");
 						   $certs = $certsquery->fetchAll();
 					 
 						   if (empty($certs)) {
@@ -251,4 +251,3 @@
 
 </body>
 </html>
-
