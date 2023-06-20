@@ -24,7 +24,7 @@ INSERT INTO education (specialty_title, university_name, period_time, university
 CREATE TABLE certifications (id int primary key auto_increment, cert_title varchar(50), issuer_name varchar(50), date_of_issue date, certificate_image longblob);
 
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Azure Administrator Associate', 'Microsoft', '2023-03-04', LOAD_FILE('/var/lib/mysql/images/az104.png'));
-INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-06-14', LOAD_FILE('/var/lib/mysql/images/cm.png'));
+INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Infrastructure and Configuration Management', 'Software University', '2023-06-14', LOAD_FILE('/var/lib/mysql/images/cm.png'));
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Containerisation CI/CD & Monitoring', 'Software University', '2023-03-28', LOAD_FILE('/var/lib/mysql/images/containers.png'));
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Linux Server Administration', 'Software University', '2022-10-24', LOAD_FILE('/var/lib/mysql/images/lsa.png'));
 INSERT INTO certifications (cert_title, issuer_name, date_of_issue, certificate_image) VALUES ('Windows Server Administration', 'Software University', '2022-07-25', LOAD_FILE('/var/lib/mysql/images/wsa.png'));
