@@ -41,9 +41,10 @@
 				<div class="yui-u">
 					<div class="contact-info">
 						<img height="120" width="120" src="pic.png">
-						<h3><a id="pdf" href="#" target="_blank" download="PDF">Download PDF</a></h3>
+						<h3><a id="pdf" href="cv.pdf" target="_blank" download="PDF">Download PDF</a></h3>
+						<h3><a id="pdf" href="https://bg.linkedin.com/in/tsvetan-tsvetanov-3a55b5182" target="blank">LinkedIn</a></h3>
 						<h3><a href="mailto:tsvetantsvetanov89@gmail.com">tsvetantsvetanov89@gmail.com</a></h3>
-						<h3>(359) - 888-593756</h3>
+						<h3>Phone: (359) - 888-593756</h3>
 					</div><!--// .contact-info -->
 				</div>
 			</div><!--// .yui-gc -->
@@ -313,4 +314,3 @@
 
 </body>
 </html>
-
