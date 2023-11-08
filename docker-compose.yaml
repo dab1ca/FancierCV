@@ -16,6 +16,8 @@ services:
             dockerfile: Dockerfile.db
         networks:
             - app-network
+        volumes:
+            - "/vagrant/db/images:/var/lib/mysql/images"
         environment:
             MYSQL_ROOT_PASSWORD: "Password1"
 networks:
